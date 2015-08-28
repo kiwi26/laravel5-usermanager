@@ -28,6 +28,18 @@ App Provider
 ]
 ```
 
+Edit your User model
+
+``` php
+
+use Kiwi\UserManager\Models\User as UserManagerUser;
+
+class User extends UserManagerUser
+{
+}
+
+```
+
 Publish views / config / translations
 
 ``` bash

@@ -86,7 +86,7 @@ class UserManagerServiceProvider extends ServiceProvider
           $noCaptchaSiteKey = env('NOCAPTCHA_SITEKEY');
 
           if((strlen($noCaptchaSecretKey) == 0) || (strlen($noCaptchaSiteKey) == 0)){
-              throw new UserManagerException('In order to use NoCaptcha ReCaptcha service, please set your secret keys in your config file (NOCAPTCHA_SITEKEY, NOCAPTCHA_SECRET)');
+              throw new UserManagerException('In order to use NoCaptcha ReCaptcha service, please set your secret keys in your env file (NOCAPTCHA_SITEKEY, NOCAPTCHA_SECRET)');
           }
         }
     }
