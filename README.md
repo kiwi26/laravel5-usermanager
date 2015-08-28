@@ -1,54 +1,97 @@
-# :package_name
+# kiwi/lavarel5-usermanager
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
 
 **Note:** Replace ```:author_name``` ```:author_username``` ```:author_website``` ```:author_email``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line.
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+This package helps you to start a project with all routes, controllers and views for users management (registration, profile, password edit/reset, login, logout)
 
 ## Install
 
 Via Composer
 
 ``` bash
-$ composer require league/:package_name
+$ composer require kiwi/lavarel5-usermanager
 ```
 
-## Usage
+## Config
+
+App Provider
 
 ``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+
+'providers' => [
+	...,
+    Kiwi\UserManager\UserManagerServiceProvider::class
+],
+'aliases' => [
+	...
+	'UserManager' => Kiwi\UserManager\Facades\UserManager::class
+]
+```
+
+Publish views / config / translations
+
+``` bash
+php artisan vendor:publish
+```
+
+Env - If NoCaptcha ReCaptcha is enabled
+
+``` bash
+NOCAPTCHA_SECRET=[YOUR_SECRET_KEY]
+NOCAPTCHA_SITEKEY=[YOUR_SITEKEY]
+```
+
+Conf file
+
+``` html
+/config/kiwi/usermanager.php
+```
+## Usage
+
+Helpers
+
+``` php
+UserManager::getProfileFormView()
+UserManager::getRegisterFormView()
+UserManager::getLoginFormView()
+UserManager::getEditPasswordFormView()
+UserManager::getResetPasswordMailFormView()
+UserManager::getResetPasswordResetFormView()
+UserManager::isNoCaptchaActive()
+```
+
+Routes
+
+``` html
+
+As a known user
+
+	user/password @POST,GET
+	user/profile @POST, GET
+	user/logout @GET
+
+As a guest
+
+	user/login @POST
+	user/register @POST
+	password/email @GET, POST
+	password/reset @POST
+	password/reset/{token} @GET
 ```
 
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Testing
-
-``` bash
-$ composer test
-```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
 ## Security
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+If you discover any security related issues, please email contact@kevin-anidjar.com  instead of using the issue tracker.
 
 ## Credits
 
-- [:author_name][link-author]
-- [All Contributors][link-contributors]
+- [Kevin Anidjar][http://www.kevin-anidjar.com]
 
 ## License
 
