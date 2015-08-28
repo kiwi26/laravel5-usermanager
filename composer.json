@@ -1,0 +1,46 @@
+{
+    "name": "Kiwi/UserManager",
+    "description": ":package_description",
+    "keywords": [
+        "league",
+        ":package_name"
+    ],
+    "homepage": "https://github.com/thephpKiwi/UserManager",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kiwi",
+            "email": "contact@kevin-anidjar.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : ">=5.3.0",
+    	  "laravelcollective/html" : "5.1.*",
+        "anhskohbo/no-captcha": "2.*",
+	      "guzzlehttp/guzzle": "~5.3|~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kiwi\\UserManager\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kiwi\\UserManager\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
