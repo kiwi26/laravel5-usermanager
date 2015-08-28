@@ -2,8 +2,6 @@
 
 [![Software License][ico-license]](LICENSE.md)
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_website``` ```:author_email``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line.
-
 This package helps you to start a project with all routes, controllers and views for users management (registration, profile, password edit/reset, login, logout)
 
 ## Install
