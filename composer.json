@@ -1,5 +1,5 @@
 {
-    "name": "kiwi/lavarel5-usermanager",
+    "name": "kiwi/laravel5-usermanager",
     "description": "This package helps you to start a project with all routes, controllers and views for users management (registration, profile, password edit/reset, login, logout)",
     "keywords": [
         "kiwi",
@@ -41,7 +41,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "1.0-stable"
         }
     }
 }
